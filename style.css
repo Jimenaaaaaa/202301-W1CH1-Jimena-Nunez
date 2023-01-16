@@ -1,0 +1,291 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(216, 201, 180);
+}
+
+.pasapalabra {
+    justify-content: center;
+    text-align: center;
+}
+
+.game {
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+    margin: 10px auto 50px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.game li {
+    position: absolute;
+    margin-top: 30px;
+    margin-right: 450px;
+    list-style: none;
+    transform-origin: 250px;
+    transform: rotate(calc(360deg/27 * var(--i))) rotate(-270deg);
+}
+
+.game li img {
+    transform: rotate(calc(360deg/ -27 * var(--i))) rotate(270deg);
+    height: 50px;
+    width: 50px;
+}
+
+.questions {
+    height: 150px;
+    width: 600px;
+    margin: auto;
+    background-color: blanchedalmond;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(89, 55, 101, 0.659);
+    z-index: 2;
+}
+
+#header {
+    width: 100%;
+    height: 50px;
+    background-color: rgb(157, 195, 195);
+    border-bottom: 3px solid rgba(89, 55, 101, 0.563);
+    border-radius: 26px 26px 0px 0px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 13px;
+    font-size: larger;
+    color: blanchedalmond;
+}
+
+
+.options {
+    display: flex;
+    justify-content: center;
+}
+
+.enter, .buttonPasa, .start{
+    margin: 10px;
+    padding: 14px 18px;
+    background-color: blanchedalmond;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(89, 55, 101, 0.563);
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgba(50, 31, 57, 0.563);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+#asking {
+    color: rgba(50, 31, 57, 0.563);
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 17px;
+    padding: 20px;
+}
+
+.character {
+    margin: -400px auto 0px;
+    height: 400px;
+    width: 370px;
+    background-image: url(https://tinypic.host/images/2023/01/10/1D187AE6-B7A3-45E5-86A8-D7DE40717345.gif);
+    background-repeat:no-repeat;
+    background-size: contain;
+    z-index: 1;
+}
+
+#typedAnswer, #userName {
+    width: 200px;
+    margin: 12px;
+    color: rgba(67, 49, 145, 0.697);
+    text-transform: uppercase;
+    border: none;
+    background-color: rgb(238, 253, 255);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#userName {
+    height: 60px;
+
+}
+
+::placeholder {
+    color: rgba(0, 0, 255, 0.344);
+}
+
+
+.exit, #timer1 {
+    width:100px;
+    height:50px;
+    margin: 10px;
+    padding: 12px 18px;
+    background-color: blanchedalmond;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(89, 55, 101, 0.563);
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgba(50, 31, 57, 0.563);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: fixed;
+}
+
+#timer1 {
+    margin-left: 90%;
+    background-color: rgb(157, 195, 195);
+}
+
+.intro {
+    margin: 50px 30%;
+    background-color: blanchedalmond;
+    height: 600px;
+    width: 500px;
+    z-index: 4;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    border-radius: 30px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: rgba(89, 55, 101, 0.563);
+    font-family: sans-serif;
+    font-weight: bold;
+    color: rgba(50, 31, 57, 0.563);
+
+
+}
+
+.flex {
+    display: flex;
+    height: 60px;
+
+}
+
+#close {
+    height: 60px;
+    width: 60px;
+    border-radius: 27px 0px 0px 0px;
+    border-color: rgba(89, 55, 101, 0.563);
+}
+
+#top, #top2  {
+    height: 100%;
+    width: 100%;
+    background-color: rgb(157, 195, 195);
+    border-radius: 27px 27px 0px 0px;
+    border-width: 3px;
+    border-color: rgba(89, 55, 101, 0.563);
+    border-bottom: 3px solid rgba(89, 55, 101, 0.563);
+    overflow: hidden;
+}
+
+.flex #top {
+    border-radius: 0px 27px 0px 0px;
+}
+
+
+marquee, #timeText {
+    font-family: sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 13px;
+    font-size: 25px;
+    color: blanchedalmond;
+}
+
+#welcome {
+    margin: 10px;
+}
+
+#welcome div {
+    color: rgba(50, 31, 57, 0.563);
+    font-family: monospace;
+    font-weight: 800;
+    font-size: 17px;
+    padding: 10px;
+    text-align: center;
+}
+
+#welcome p {
+    color: rgba(50, 31, 57, 0.563);
+    font-family: monospace;
+    font-weight: 2000;
+    font-size: 30px;
+    padding: 0px;
+    text-align: center;
+}
+
+.flex .start {
+    height: 60px;
+    width: 100px;
+    background-color: rgb(157, 195, 195);
+    padding: 5px 10px;
+    font-size: 20px;
+    color: blanchedalmond;
+}
+
+.info {
+    height: 400px;
+    background-color:  blanchedalmond;
+}
+
+#rules {
+    text-align: left;
+    padding: 10px 10px 25px 30px;
+}
+
+#rules ul li {
+    margin: 10px;
+    padding: 10px 10px 10px 30px;
+}
+
+.info .flex {
+    justify-content: center;
+}
+
+#intro-bg, #outro-bg {
+    margin: 0px;
+    padding: 0px;
+    height: 1000px;
+    width: 100%;
+    background-color: rgb(216, 201, 180);
+    position: absolute;
+    z-index: 6;
+}
+
+.left {
+    text-align: left;
+}
+
+#points {
+    margin: 30px;
+    font-size: 30px;
+}
+
+#highscore {
+    margin: 0px 30px 30px 30px;
+    font-size: 20px;
+    font-family: monospace;
+    line-height:40px;
+}
