@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="shortcut icon" href="#" />
+  <title>Pasapalabra</title>
+</head>
+
+<body>
+  <audio id="audio" src="https://dl.sndup.net/nvb8/FX%20GANAR%20CON%20DURACION%20DELAY%20REDUCIDA.ogg"></audio>
+  <audio id="audio2" src="https://dl.sndup.net/sq4r/FX%20PERDER.ogg"></audio>
+  <audio id='prueba' src="https://dl.sndup.net/yrpn/LOOP%20MUSICA%2030s%20OGG.ogg"></audio>
+
+  <div class="pasapalabra">
+
+    <div class="exit" onclick="exitgame()">exit</div>
+    <div id="timer1"></div>
+
+    <div id="outro-bg" hidden>
+      <div class="intro">
+        <div class="flex">
+          <div id="top2">
+            <div id="timeText"> </div>
+          </div>
+        </div>
+        <div class="info">
+          <div id="points">
+            <div>PUNTUACIONES</div>
+          </div>
+          <div class="left">
+            <p id="highscore"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="intro-bg" hidden>
+      <div class="intro">
+        <div class="flex">
+          <button id="close">x</button>
+          <div id="top">
+            <marquee>.:.:.:.:.:. PASAPALABRA .:.:.:.:.:. </marquee>
+          </div>
+        </div>
+        <div class="info">
+          <div id="welcome">
+            <div>Bienvenido al juego</div>
+            <p>PASAPALABRA</p>
+          </div>
+          <div id="rules">
+            <ul>
+              <li> 'Recibirás 1 punto por cada respuesta correcta.</li>
+              <li> Si dudas de la respuesta, haz click sobre el botón "Pasapalabra" para contestarla en la siguiente
+                ronda. </li>
+              <li> En caso de querer abandonar el juego en cualquier momento, pulsa el botón "EXIT". '</li>
+              <li> Cuando quieras empezar, introduce tu nombre en la casilla de abajo y dale a "start"</li>
+            </ul>
+          </div>
+          <div class="flex">
+            <input type="text" id="userName" placeholder="nombre" value="">
+            <button class="start" type="button">start</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div class="game">
+      <li style="--i:0" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/07A4BC86-8123-451D-BA59-EA025EF71212.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/CE970EE9-5A42-4C3A-AD61-E14B4FED86DD.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/25C901E1-79C8-4553-890A-F0582F14616C.gif"
+          alt="A">
+      </li>
+      <li style="--i:1" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/BDEB6768-49E7-477A-98DB-5D04F66E323F.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/5D12A6CC-3F3F-41E3-AA38-42224FD524A7.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/1B814808-5810-4DF3-B319-D0AE09B6B887.gif"
+          alt="B">
+      </li>
+      <li style="--i:2" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/E8012B77-5E25-41F0-BD2B-8B627953C652.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/28299F49-5D84-43AA-A244-F4B985FF7C16.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/E78E09EF-3DBC-4309-9AAD-D55C9D3F97AF.gif"
+          alt="C">
+      </li>
+      <li style="--i:3" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/9AFECC74-2788-46EF-A821-D0CD30A29644.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/3D6F3753-1F09-4463-B210-9A82E69EBE14.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/CB28275A-1D6E-45DE-BEB7-18B155BF5801.gif"
+          alt="D">
+      </li>
+      <li style="--i:4" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/8D9A88A7-740E-40BA-B0FC-48A4818B3C9C.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/8CAE7DD4-AA2C-4AA9-A4D9-DE9D9C0EDC09.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/5C874CBA-ADD3-4DAF-9DC6-C1D24A4C95E1.gif"
+          alt="E">
+      </li>
+      <li style="--i:5" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/B8F2D9B5-809B-416B-9A16-02170BBDC49D.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/36DABA00-6FE3-49D9-9F39-9ACDD647430C.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/E0981690-FA00-4401-BBAA-67516E2F00A6.gif"
+          alt="F">
+      </li>
+      <li style="--i:6" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/7626D73B-716F-4758-A120-B068C43124D7.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/2F11F3F6-8752-4CF4-960A-AFA396F7BCC1.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/F498510C-1B85-4D64-9DFA-9BAE2A52EDC9.gif"
+          alt="G">
+      </li>
+      <li style="--i:7" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/EFB202F8-CB4A-48AF-9191-5ECE4884485B.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/9B510F42-F2EC-41DF-AEEC-B2B7DE306FD5.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/A87536EF-B27D-4273-BE39-6C3923F39280.gif"
+          alt="H">
+      </li>
+      <li style="--i:8" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/BADCD670-9AF3-4385-9915-36CAF326F8EC.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/72AC8FEF-EF76-4E94-B685-15A1118DBC5F.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/8274AFDA-6EE8-4C7C-808B-902D7FCDCE47.gif"
+          alt="I">
+      </li>
+      <li style="--i:9" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/05C5F776-A9BB-4197-B2B3-0B027FD6E198.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/CAD4C8BB-12CA-46C6-890D-7704606AEE45.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/94CD2FDC-568F-4D0F-9BAC-F81A2F3B6943.gif"
+          alt="J">
+      </li>
+      <li style="--i:10" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/26E49CD2-FB96-4280-9719-E57164E49A2C.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/B919E88B-3F88-4BD8-9282-3145B090B366.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/26988456-8831-440A-A567-68271AADF30C.gif"
+          alt="K">
+      </li>
+      <li style="--i:11" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/3D8AFD3F-F100-4FA0-A717-90CAE174B5A9.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/FCBC1DE4-2E87-46C8-BADC-D098A96413E2.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/7BF16293-87A1-4245-BB29-0BECA21599A6.gif"
+          alt="L">
+      </li>
+      <li style="--i:12" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/33555EC3-5D4A-4EF5-9ED5-415341607DF0.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/3AB7D799-8EED-451E-907F-892C42F202BA.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/2D7D71F2-66CB-4DA5-A409-40DC984A5E86.gif"
+          alt="M">
+      </li>
+      <li style="--i:13" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/33F4CA4C-AD22-4B3D-A8B3-7948D948B06C.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/3A1036E8-8C49-4DD6-A34B-347DDF98AC1B.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/944C504E-71A6-492F-945E-2131967006BA.gif"
+          alt="N">
+      </li>
+      <li style="--i:14" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/951B61F4-FD93-4380-A0BC-440F5B73C14B.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/11D9D680-79FD-4613-AAC2-0FF7FC3681D4.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/F0E18B54-56E5-482D-8CA2-122F69376C68.gif"
+          alt="Ñ">
+      </li>
+      <li style="--i:15" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/9BE5E0E0-447D-4902-AC73-31CB0D200F3C.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/7F447C68-B53E-4EB0-9E57-4A429EF31C82.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/D35DF242-935D-4996-9077-3C347E6ADE2E.gif"
+          alt="O">
+      </li>
+      <li style="--i:16" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/03E0EFF7-3BB0-40E0-8003-A764C619D9BC.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/3246F97C-CD87-4B98-AFF0-F39898F9137A.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/F579EB5F-5279-4279-94C9-714DD33A052A.gif"
+          alt="P">
+      </li>
+      <li style="--i:17" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/6D835560-3AED-4EAF-BCC4-13B206F5D99C.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/362EE1B3-F8E4-4894-953F-0574207A5226.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/D7580B7E-D480-4FAF-B3C8-67509EF533EB.gif"
+          alt="Q">
+      </li>
+      <li style="--i:18" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/1D9009BF-7EC2-46C5-82D1-094FD7897C75.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/6AF80E96-9D10-4F40-94FC-ECAB77185D68.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/B553D0B1-1A06-4FA4-A1D4-42D43C0F6686.gif"
+          alt="R">
+      </li>
+      <li style="--i:19" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/1138EA5B-2DD1-4F34-A214-3403B8314E2D.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/4DDC4E6E-5887-4480-89F0-3697414066EF.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/D3235AE4-893B-4F93-A939-73546BC8E846.gif"
+          alt="S">
+      </li>
+      <li style="--i:20" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/268DF026-24BC-4D0D-A055-97AB65E94A3E.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/B794B033-E28C-4D1E-BCC1-8DF32E853623.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/AF52A448-9473-4A45-BC84-BAB764E5D253.gif"
+          alt="T">
+      </li>
+      <li style="--i:21" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/2D09B7FA-892F-4BBE-BF3F-10B3B9911058.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/72538D8B-4ACC-46A2-899E-2C15098F3717.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/34727DAE-0FC3-4E9B-80BE-7E60076E7396.gif"
+          alt="U">
+      </li>
+      <li style="--i:22" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/32BA544B-8718-4869-A495-459A7B91E99E.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/9B468038-A66A-4CA3-8F34-48B98F6B0F9C.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/E2B11D03-3BFF-4DEF-8CC8-5C641A3FCCBC.gif"
+          alt="V">
+      </li>
+      <li style="--i:23" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/13536395-9DF3-41C5-8EFF-72EF85412DF3.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/32A7246B-DF71-4B20-A7B3-FFA2B7E533B2.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/56A138AB-F8C8-4308-8957-8A558CC28F84.gif"
+          alt="W">
+      </li>
+      <li style="--i:24" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/FDF07EC8-96C8-4E4E-85F2-826220498DBC.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/42CFA973-0078-4294-AAD6-E354B7ED34CC.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/D9F73A6D-CA61-4865-A07B-BA0A2A27032E.gif"
+          alt="X">
+      </li>
+      <li style="--i:25" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/54AE4384-AEB3-4316-920C-107F866C2CE5.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/554C1E9B-B211-4829-8BE9-A7B9CE515B01.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/35E36CC6-CA4B-43D0-8186-488D458C04B7.gif"
+          alt="Y">
+      </li>
+      <li style="--i:26" class="letter">
+        <img src="https://tinypic.host/images/2023/01/10/78273386-9D51-4480-BFCD-5E3DC8F58BC8.gif"
+          data-src-new="https://tinypic.host/images/2023/01/14/1B99215F-2EB2-4249-974D-5D50E3AED918.gif"
+          data-src-alternative="https://tinypic.host/images/2023/01/14/D3D9D73D-768E-4601-BEF4-452D6CB5366B.gif"
+          alt="Z">
+      </li>
+    </div>
+
+    <div class="character"></div>
+
+    <div class="container">
+      <div class="questions">
+        <div id="header"></div>
+        <div id="asking"></div>
+      </div>
+      <div class="options">
+        <input type="text" id="typedAnswer" placeholder="Escribe aqui" value="">
+        <button class="enter" type="button" onclick="game()" disabled>enter</button>
+        <button class="buttonPasa" type="button" onclick="pasapalabra()" disabled>pasapalabra
+      </div>
+    </div>
+  </div>
+
+  <div class="clock"></div>
+  </div>
+  <script type="text/javascript" src="main.js"></script>
+</body>
+
+</html>
